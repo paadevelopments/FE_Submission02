@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Freddy's Shop | Login</title>
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+	
+	<!-- included bootstrap to utilize add-on css capabilities like 'drop-shadow' for svgs -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+
+	<!-- included jquery lib to ease working with DOM elements -->
+	<script src="./assets/js/jquery.js"></script>
+
+	<!-- included font awesome icon pack  -->
+	<script src="./assets/js/font_awesome.js"></script>
+
+	<style id="theme_styles" type="text/css"></style>
+</head>
+<body>
+	<div class="splash">
+		<object data="./assets/brand/app_icon_svg.svg"></object>
+		<div class="splash_progress"> <div></div> </div>
+	</div>
+	<div class="back_container"> <div></div><div></div><div></div> </div>
+	<div class="main_container">
+		<div class="main_c_inner shadow_elmnt">
+			<div class="main_c_form">
+				<button class="theme_switch shadow_elmnt" onclick="theme_switch();" disabled>
+					<i class="fal fa-spinner"></i>
+				</button>
+				<div class="main_c_form_logo">
+					<object data="./assets/brand/app_icon_svg.svg"></object>
+					<div><b>Freddy's Artisenal Halloween Candy Shop.</b></div>
+				</div>
+				<div class="main_c_form_tagg">Welcome Back!</div>
+				<div class="form_indicator"></div>
+				<div class="form_input_elmnt">
+					<div class="form_input_elmnt_a">
+						<label class="form_input_elmnt_label">Enter your username</label>
+						<input id="login_form_username" type="name" autocomplete="on" 
+							   onkeypress="intercept_input(this, event, '#login_submit_button')" required/>
+					</div>
+				</div>
+				<div class="form_input_elmnt">
+					<div class="form_input_elmnt_a">
+						<label class="form_input_elmnt_label">Enter your password</label>
+						<input id="login_form_password" type="password" autocomplete="off" 
+							   onkeypress="intercept_input(this, event, '#login_submit_button')" required/>
+						<div>
+							<button onclick="password_state(this);"><i class="fal fa-eye-slash"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="form_submt_elmnt shadow_elmnt">
+					<button id="login_submit_button" onclick="process_login(this);"> Login </button>
+				</div>
+			</div>
+			<div class="main_c_text">
+				<b>Freddy's<br>Artisenal<br>Halloween<br>Candy Shop.</b>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./assets/js/login.js"></script>
+</html>

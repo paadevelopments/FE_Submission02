@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Freddy's Shop | Panel</title>
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+
+	<!-- included bootstrap to utilize add-on css capabilities like 'drop-shadow' for svgs -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/panel.css">
+
+	<!-- included jquery lib to ease working with DOM elements -->
+	<script src="./assets/js/jquery.js"></script>
+
+	<!-- included font awesome icon pack  -->
+	<script src="./assets/js/font_awesome.js"></script>
+
+	<!--- included chart library -->
+	<script src="./assets/js/chart.js"></script>
+
+	<style id="theme_styles" type="text/css"></style>
+</head>
+<body>
+	<div class="splash">
+		<object data="./assets/brand/app_icon_svg.svg"></object>
+		<div class="splash_progress"> <div></div> </div>
+	</div>
+	<div class="back_container">
+		<div class="back_container_a">
+			<div class="back_container_a_a"></div><div class="back_container_a_b"></div>
+		</div>
+		<div class="back_container_b"></div>
+	</div>
+	<div class="main_container">
+		<div class="main_container_inner">
+			<div class="main_container_side">
+				<div class="main_cs_hed">
+					<object data="./assets/brand/app_icon_svg.svg"></object>
+				</div>
+				<div class="main_cs_bod nav_buttons scroller_y_elmnt">
+					<button onclick="nav_open('#')" data-typ="0" data-des="dashboard">
+						<div><i class="fal fa-chart-bar"></i></div>
+						<div>Dashboard</div>
+					</button>
+					<button onclick="nav_open('#orders')" data-typ="0" data-des="orders">
+						<div><i class="fal fa-box-check"></i></div>
+						<div>Orders</div>
+					</button>
+					<button class="sticky_b_elmnt" onclick="logging_user_out()" style="opacity:1;">
+						<div><i class="fal fa-sign-out"></i></div>
+						<div>Logout</div>
+					</button>
+				</div>
+			</div>
+			<div class="main_container_main">
+				<div class="main_cm_head">
+					<div class="main_cm_head_a">
+						<object data="./assets/brand/app_icon_svg.svg"></object>
+					</div>
+					<div class="main_cm_head_b">
+						<div class="main_cm_head_b_a"><b>  </b></div>
+						<div class="main_cm_head_b_b">
+							<button onclick="section_reload(this)" class="shadow_elmnt"><i class="fal fa-redo-alt"></i></button>
+							<button onclick="theme_switch(this);" class="theme_switch shadow_elmnt"><i class="fal fa-moon"></i></button>
+							<button onclick="logging_user_out()" class="shadow_elmnt"><i class="fal fa-sign-out"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="main_cm_body">
+					<div id="panel_dashb" class="main_cm_body_sections scroller_y_elmnt" onscroll="header_scroll_shadow(this)"
+						 style="display:none;">
+						<div class="panel_dashb_summary scroller_x_elmnt">  </div>
+						<div class="panel_dashb_areas">
+							<div class="panel_dashb_areas_a">
+								<div><b>  </b></div>
+								<button class="shadow_elmnt" onclick="chart_data_switch(this)"><i class="fal fa-toggle-off"></i></button>
+							</div>
+							<div class="panel_dashb_areas_b scroller_x_elmnt">  </div>
+						</div>
+						<div class="panel_dashb_areas">
+							<div class="panel_dashb_areas_a">
+								<div><b> Best Sellers</b></div>
+								<button disabled><i class="fal fa-angle-down"></i></button>
+							</div>
+							<div class="panel_dashb_areas_b scroller_x_elmnt">  </div>
+						</div>
+					</div>
+					<div id="panel_ordrs" class="main_cm_body_sections scroller_y_elmnt" onscroll="header_scroll_shadow(this)"
+						 style="display:none;">
+						<div class="panel_ordrs_head">
+							<input 
+								type="name" placeholder="Enter product name" 
+								onkeypress="intercept_input(this, event, '#orders_search_button')"/>
+							<button id="orders_search_button" class="shadow_elmnt" onclick="run_orders_query(this)">
+								<i class="fal fa-search"></i>
+							</button>
+						</div>
+						<div class="panel_ordrs_body scroller_x_elmnt">  </div>
+						<div class="panel_ordrs_foot">
+							<button onclick="order_page_nav(this, 0)">
+								<span><i class="fal fa-angle-left"></i></span><span>Prev Page</span>
+							</button>
+							<div>Page 0 of 0</div>
+							<button onclick="order_page_nav(this, 1)">
+								<span>Next Page</span><span><i class="fal fa-angle-right"></i></span>
+							</button>
+						</div>
+					</div>
+					<button id="section_scroll_up_floating_button" class="shadow_elmnt" onclick="section_go_up()" style="display:none;">
+						<i class="fal fa-angle-up"></i>
+					</button>
+				</div>
+				<div class="main_cm_foot">
+					<div class="main_cm_foot_inner nav_buttons">
+						<button onclick="nav_open('#o')" data-typ="1" data-des="dashboard">
+							<div> <i class="fal fa-chart-bar"></i> </div>
+							<div>Dashboard</div>
+						</button>
+						<button onclick="nav_open('#orders')" data-typ="1" data-des="orders">
+							<div><i class="fal fa-box-check"></i> </div>
+							<div>Orders</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./assets/js/panel.js"></script>
+</html>
