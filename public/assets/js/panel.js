@@ -164,13 +164,13 @@ function load_orders_data() {
 					return;
 				}
 			}
-			$('.section_progress div:eq(0)').html('<i class="fal fa-exclamation-triangle"></i>');
-			return $('.section_progress div:eq(1)').text( res.substring(0, 200) );
+			$('.section_progress').find('div:eq(0)').html( '<i class="fal fa-exclamation-triangle"></i>' );
+			return $('.section_progress').find('div:eq(1)').html( res.substring(0, 200) );
 		},
 		error: function(err) {
-			$('.section_progress div:eq(0)').html('<i class="fal fa-exclamation-triangle"></i>');
+			$('.section_progress').find('div:eq(0)').html( '<i class="fal fa-exclamation-triangle"></i>' );
 			if (err.responseJSON) return window.location.reload();
-			return $('.section_progress div:eq(1)').text( 'Connection error. Tap on the <i class="fal fa-search"></i> button to retry.' );
+			return $('.section_progress').find('div:eq(1)').html( 'Connection error. Tap on the <i class="fal fa-search"></i> button to retry.' );
 		}
 	});
 }
@@ -274,13 +274,13 @@ function load_dashb_data() {
 					return;
 				}
 			}
-			$('.section_progress div:eq(0)').html('<i class="fal fa-exclamation-triangle"></i>');
-			return $('.section_progress div:eq(1)').text( res.substring(0, 200) );
+			$('.section_progress').find('div:eq(0)').html( '<i class="fal fa-exclamation-triangle"></i>' );
+			return $('.section_progress').find('div:eq(1)').html( res.substring(0, 200) );
 		},
 		error: function(err) {
-			$('.section_progress div:eq(0)').html('<i class="fal fa-exclamation-triangle"></i>');
+			$('.section_progress').find('div:eq(0)').html( '<i class="fal fa-exclamation-triangle"></i>' );
 			if (err.responseJSON) return window.location.reload();
-			return $('.section_progress div:eq(1)').text( 'Connection error. Tap on the <i class="fal fa-redo-alt"></i> button to retry.' );
+			return $('.section_progress').find('div:eq(1)').html( 'Connection error. Tap on the <i class="fal fa-redo-alt"></i> button to retry.' );
 		}
 	});
 }
